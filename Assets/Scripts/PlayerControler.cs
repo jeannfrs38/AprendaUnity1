@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class funcionamentos : MonoBehaviour
+public class PlayerControler : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     private GameControle _GameControle;

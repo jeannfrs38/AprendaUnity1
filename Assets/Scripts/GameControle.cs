@@ -11,6 +11,7 @@ public class GameControle : MonoBehaviour
     public float alturaMinY;
     public float limiteMaxX;
     public float limiteMinX;
+    public PlayerControler _playerControler;
 
     [Header("Config. Objetos")]
     public float velocidadeObjeto;
@@ -18,6 +19,7 @@ public class GameControle : MonoBehaviour
 
     public float tamanhoPonte;
     public GameObject pontePrefab;
+
 
     [Header("Config. Barril")]
     public int      orderTop;
@@ -27,15 +29,22 @@ public class GameControle : MonoBehaviour
 
     public float    tempoSpawn;
     public GameObject barrilPrefab;
+
+    [Header("Globals")]
+    public float playerXPos;
+    public int score;
+
     void Start()
     {
+        _playerControler = FindObjectOfType(typeof(PlayerControler)) as PlayerControler;
         StartCoroutine("spawnBarril");
     }
 
     // Update is called once per frame
-    void Update()
+   
+    private void LateUpdate()
     {
-        
+        playerXPos = _playerControler.transform.position.x;
     }
     IEnumerator spawnBarril()
     {
@@ -59,5 +68,9 @@ public class GameControle : MonoBehaviour
         StartCoroutine("spawnBarril");
 
 
+    }
+    public void Pontuacao(int qtdpontos)
+    {
+        score += qtdpontos;
     }
 }
