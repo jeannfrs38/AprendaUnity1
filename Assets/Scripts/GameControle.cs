@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameControle : MonoBehaviour
 {
@@ -72,5 +73,10 @@ public class GameControle : MonoBehaviour
     public void Pontuacao(int qtdpontos)
     {
         score += qtdpontos;
+    }
+
+    public void mudarCena(string cenaDestino)
+    {
+        SceneManager.LoadScene(cenaDestino);
     }
 }

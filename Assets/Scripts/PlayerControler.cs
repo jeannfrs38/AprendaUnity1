@@ -59,6 +59,10 @@ public class PlayerControler : MonoBehaviour
         transform.position = new Vector3(posX, posY, 0);
 
     }
+    private void OnTriggerEnter2D()
+    {
+        _GameControle.mudarCena("gameOver");
+    }
 
-    
+
 }
