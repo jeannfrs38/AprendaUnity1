@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControle : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class GameControle : MonoBehaviour
 
     [Header("Globals")]
     public float playerXPos;
+    public Text textScore;
     public int score;
 
     void Start()
@@ -73,6 +75,7 @@ public class GameControle : MonoBehaviour
     public void Pontuacao(int qtdpontos)
     {
         score += qtdpontos;
+        textScore.text = score.ToString();
     }
 
     public void mudarCena(string cenaDestino)
