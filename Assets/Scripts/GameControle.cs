@@ -37,6 +37,9 @@ public class GameControle : MonoBehaviour
     public Text textScore;
     public int score;
 
+    [Header("FX Source")]
+    public AudioSource fxSource;
+    public AudioClip fxClip;
     void Start()
     {
         _playerControler = FindObjectOfType(typeof(PlayerControler)) as PlayerControler;
@@ -76,6 +79,7 @@ public class GameControle : MonoBehaviour
     {
         score += qtdpontos;
         textScore.text = score.ToString();
+        fxSource.PlayOneShot(fxClip);
     }
 
     public void mudarCena(string cenaDestino)
